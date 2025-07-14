@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日は何の日？</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icon-192.png" />
+  <meta name="theme-color" content="#2196F3" />
+</head>
+<body>
+  <div class="container">
+    <h1>今日は何の日？</h1>
+    <div id="quiz-box">
+      <p id="question"></p>
+      <ul id="choices"></ul>
+      <button id="next-btn">次へ</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('SW登録成功'))
+        .catch(e => console.error('SW登録失敗:', e));
+    }
+  </script>
+</body>
+</html>
