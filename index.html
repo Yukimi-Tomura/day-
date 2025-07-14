@@ -2,29 +2,66 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>今日は何の日？</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="icon-192.png" />
-  <meta name="theme-color" content="#2196F3" />
 </head>
 <body>
-  <div class="container">
-    <h1>今日は何の日？</h1>
-    <div id="quiz-box">
-      <p id="question"></p>
-      <ul id="choices"></ul>
-      <button id="next-btn">次へ</button>
+
+
+    <div class="container">
+        <div id="title-screen" class="screen active">
+            <h1>今日は何の日？</h1>
+            <p class="author">by TY</p>
+            <button id="start-button">ゲーム開始</button>
+        </div>
+
+        <div id="date-input-screen" class="screen">
+            <h2>日付を入力してください</h2>
+            <div class="input-group">
+                <label for="birthdate">あなたの誕生日:</label>
+                <input type="date" id="birthdate">
+            </div>
+            <div class="input-group">
+                <label for="app-date">アプリを使用している日:</label>
+                <input type="date" id="app-date">
+            </div>
+            <button id="submit-dates-button">次へ</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <h2 id="question-number"></h2>
+            <p id="question-text"></p>
+            <div class="options">
+                <button class="option-button" data-option="A">A. </button>
+                <button class="option-button" data-option="B">B. </button>
+                <button class="option-button" data-option="C">C. </button>
+            </div>
+            <p id="feedback" class="feedback"></p>
+            <button id="next-question-button" class="hidden">次の問題</button>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2>結果発表！</h2>
+            <p id="score-display"></p>
+            <p id="birthday-message"></p>
+            <button id="restart-button">もう一度遊ぶ</button>
+        </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('SW登録成功'))
-        .catch(e => console.error('SW登録失敗:', e));
-    }
-  </script>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker 登録成功'))
+                .catch(err => console.error('Service Worker 登録失敗:', err));
+        }
+    </script>
 </body>
 </html>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
+
