@@ -1,0 +1,38 @@
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .author {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+
+    .option-button {
+        padding: 12px 15px;
+        font-size: 1.1em;
+    }
+
+    .input-group {
+        width: 95%;
+    }
+}
